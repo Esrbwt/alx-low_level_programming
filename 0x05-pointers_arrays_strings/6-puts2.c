@@ -1,19 +1,23 @@
 #include "main.h"
 
 /**
- * puts2 - prints every other character of a string, starting with the first
- * character, followed by a new line.
- * @str: input string
- * Return: 0
+ * puts2 - prints every other character of a string
+ * @str: The string to be treated
+ * Return: void
  */
 void puts2(char *str)
 {
 	int i;
+	int j = 0;
 
-	for (i = 0; str[i] != '\0'; i += 2)
+	while (str[i] != '\0'; i += 2)
 	{
-		_putchar(str[i]);
+	j++;
 	}
 
+	for (i = 0; i < j; i += 2)
+	{
+	_putchar(str[i];
+	}
 	_putchar('\n');
 }
