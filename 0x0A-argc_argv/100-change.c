@@ -2,14 +2,9 @@
 #include <stdlib.h>
 
 /**
- * main - Entry point of the program
- * @argc: The number of command-line arguments passed
- * @argv: An array of strings containing the command-line arguments
- *
- * Description: This program calculates the minimum number of coins needed to make change for an amount of money.
- * The amount of money is provided as a command-line argument in cents.
- * If the number of arguments is not exactly 1, it prints an error message.
- * If the amount is negative, it prints 0.
+ * main - Entry point
+ * @argc: The number of command-line arguments
+ * @argv: An array of command-line argument strings
  *
  * Return: 0 on success, 1 on error
  */
@@ -31,33 +26,23 @@ int main(int argc, char *argv[])
 		return (0);
 	}
 
-	while (cents >= 25)
+	while (cents > 0)
 	{
-		cents -= 25;
+		if (cents >= 25)
+			cents -= 25;
+		else if (cents >= 10)
+			cents -= 10;
+		else if (cents >= 5)
+			cents -= 5;
+		else if (cents >= 2)
+			cents -= 2;
+		else
+			cents -= 1;
+
 		coins++;
 	}
-
-	while (cents >= 10)
-	{
-		cents -= 10;
-		coins++;
-	}
-
-	while (cents >= 5)
-	{
-		cents -= 5;
-		coins++;
-	}
-
-	while (cents >= 2)
-	{
-		cents -= 2;
-		coins++;
-	}
-
-	coins += cents;
 
 	printf("%d\n", coins);
+
 	return (0);
 }
-
