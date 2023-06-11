@@ -1,17 +1,12 @@
 #include <stdio.h>
-#include "main.h"
+
 /**
- * main - Entry point
- * @argc: Argument count
- * @argv: Argument vector
+ * main - Entry point of the program
  *
  * Return: Always 0 (Success)
  */
-int main(int argc, char *argv[])
+int main(void)
 {
-	(void) argc; /* unused parameter */
-
-	printf("%s\n", argv[0]);
-
+	printf("%s\n", __FILE__);
 	return (0);
 }
